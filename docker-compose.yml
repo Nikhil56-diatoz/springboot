@@ -11,13 +11,14 @@ services:
     ports:
       - 5432:5432
     environment:
+         - POSTGRES_JDBC_URL=jdbc:postgresql://localhost:5432/practice
          - POSTGRES_PASSWORD=r00t@123
          - POSTGRES_USER=postgres
          - POSTGRES_DB=practice
     restart: unless-stopped
 # APP*****************************************
-  PracticeAppApplication:
-    image: pa:latest
+  practiceapp:
+    image: latest
     network_mode: bridge
     container_name: springbootapp
     expose:
